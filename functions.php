@@ -17,8 +17,13 @@ function auth(){
 		return false;
 	return (object) $_SESSION["auth"];	
 }
-if(authCheck())
-	$user = $app["database"]->selectId("users", auth()->id)[0];
+if(authCheck()){
+	$temp = $app["database"]->selectId("users", auth()->id);
+	if(count($temp))
+		$user = $temp[0];
+	else
+		unset($_SESSION["auth"]);
+}
 
 function gender(){
 	return [

@@ -72,8 +72,10 @@
 				<?= $user->adp_start_date ? date_create($user->adp_end_date)->format('d, M, Y') : "" ?>
 				<br> <br>
 				Remaining Membership Days <br>
-				<?= date_diff(date_create($user->adp_start_date), date_create($user->adp_end_date))
-						->format('%a') ?> day(s)
+				<?= $remaining ?>
+				<br> <br>
+				<span class="text-success font-weight-bold">Donation Made</span>
+				<span class="text-success font-weight-bold">$ <?= $fee ?> </span>
 			</div>
 		</div>
 	</div>
@@ -81,9 +83,5 @@
 
 <?php require 'views/includes/footer.php'; ?>
 
-<script>
-	$(document).off('click', '.show-modal').on('click', '.show-modal', function(event) {
-		event.preventDefault();
-		$('#' + $(this).data('id')).modal('show');
-	});
-</script>
+</body>
+</html>

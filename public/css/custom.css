@@ -175,7 +175,9 @@ body{
 	left: calc(50% - 8px);
 	bottom: 2px;
 }
-
+.pointer:hover{
+	cursor: pointer;
+}
 /*******************
  *	css for slider *
  ******************/
@@ -203,3 +205,50 @@ body{
   #slider .row .slides img{
   	margin: auto;
   }
+
+/*css for chat on footer*/
+#chats{
+	position: absolute;
+	width: 92%;
+	background: #f5f5f5;
+	left: 4%;
+	height: 400px;
+	bottom: 0;
+	display: none;
+}
+.message-container{
+	height: 280px;
+	overflow-y: auto;
+	background: #343a40;
+}
+.message-container .image{
+	height: 40px;
+	width: 40px;
+	float: left;
+	border-radius: 50%;
+	border: 1px solid #fff;
+	overflow: hidden;
+}
+.message-container .message{
+	float: left;
+	min-height: 40px;
+	border-radius: 15px;
+	background: #f1f1f1;
+	width: calc(100% - 80px);
+	font-size: 95%;
+	line-height: 17px;
+}
+.send-btn{
+	height: 60px;
+	width: 40px;
+	float: right;
+	width: 50px;
+	text-align: center;
+	background: transparent;
+	border-color: transparent;
+}
+
+.send-btn i{
+	font-size: 35px;
+	color: #fff;
+}

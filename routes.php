@@ -42,5 +42,17 @@ $router->post('forum/create', 'forum/create.php');
 $router->post('post/create', 'forum/post.create.php');
 
 
+/*****************
+* chat routes  *
+*****************/
+$router->post('chat/send', 'chat/store.php');
+$router->post('chat/load', 'chat/load.php');
 
+
+
+/**************************
+* make and fetch donation  *
+***************************/
+$router->post('donation/make', 'donation/make.php');
+$router->post('sal/web-service/donations', 'donation/getDonations.php');
 

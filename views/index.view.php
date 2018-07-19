@@ -37,6 +37,41 @@
 <section class="mt-3">
       <div><h3 class="text-center">TOTAL VISITORS : <?= $count ?></h3></div>
 </section>
+<hr style="background: lightgray">
+<section>
+  <div class="container">
+    <div class="row">
+      <div class="col-md-10 offset-md-1">
+        <div class="bg-white p-3">
+          Save an Amur Leopard (SAL) is a charity that has been set up to specifically save the leopard. This elegant animal is one of the most elusive cats across the world. In the last 15 years the number of leopards has declined by 20% and in 2017 it was noted that there are only 70 of these leopards left in the wild as their habitat is under threat from forest fires and land clearance to develop roads and manufacturing plants.
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<section>
+  <div class="container">
+    <div class="row">
+      <div class="col-md-10 offset-md-1">
+        <div id="demo" class="carousel slide" data-ride="carousel">
+          <div class="carousel-inner donors">
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
 <?php require('views/includes/footer.php'); ?>
+
+<script>
+  $(function() {
+    $.post("sal/web-service/donations", function(data, status) {
+      console.log(status);
+      if(status == "success")
+        $(document).find(".carousel-inner.donors").html(data);
+    });
+  });
+</script>
+
 </body>
 </html>

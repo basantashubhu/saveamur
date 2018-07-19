@@ -69,4 +69,26 @@ class QueryBuilder {
                die('whooops! something went wrong.');
           }
      }
+
+     public function selectRaw($query) {
+          try {
+               $statement = $this->pdo->prepare($query);
+               $statement->execute();
+               return $statement->fetchAll(PDO::FETCH_CLASS);
+          } catch (\Exception $e) {
+               die($e->getMessage());
+               die('whooops! something went wrong.');
+          }
+     }
+
+     public function delete($table, $id) {
+          $query = "DELETE FROM {$table} WHERE id = {$id}";
+          try {
+               $statement = $this->pdo->prepare($query);
+               $statement->execute();
+               return true;
+          } catch (Exception $e) {
+               return false;
+          }
+     }
 }
